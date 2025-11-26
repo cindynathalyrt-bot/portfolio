@@ -14,30 +14,35 @@
         }
 
         :root {
-            --primary: #667eea;
-            --secondary: #764ba2;
-            --dark: #2c3e50;
-            --light: #f8f9fa;
-            --success: #27ae60;
-            --text: #34495e;
+            --bg-primary: #f8f9fa;
+            --bg-secondary: #ffffff;
+            --accent-light: #e8f4f8;
+            --accent-medium: #b8d4dc;
+            --accent-dark: #88b4c2;
+            --text-primary: #4a5568;
+            --text-secondary: #718096;
+            --text-light: #a0aec0;
+            --border: #e2e8f0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
         }
 
         body {
-            background: var(--light);
-            color: var(--text);
-            line-height: 1.6;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
         }
 
         /* Header & Navigation */
         header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
+            background: var(--bg-secondary);
             padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(10px);
         }
 
         .nav-container {
@@ -50,31 +55,38 @@
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--accent-dark);
+        }
+
+        .logo span {
+            color: var(--text-primary);
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         .nav-links a {
-            color: white;
+            color: var(--text-primary);
             text-decoration: none;
-            transition: opacity 0.3s ease;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            font-size: 0.95rem;
         }
 
         .nav-links a:hover {
-            opacity: 0.8;
+            color: var(--accent-dark);
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: white;
-            padding: 120px 2rem 80px;
+            background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent-medium) 100%);
+            color: var(--text-primary);
+            padding: 140px 2rem 80px;
             text-align: center;
         }
 
@@ -84,29 +96,37 @@
         }
 
         .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            line-height: 1.3;
+            color: var(--text-primary);
         }
 
         .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
         }
 
         .btn {
             display: inline-block;
-            background: white;
-            color: var(--primary);
-            padding: 12px 30px;
-            border-radius: 25px;
+            background: var(--accent-dark);
+            color: white;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 8px;
             text-decoration: none;
-            font-weight: bold;
-            transition: transform 0.3s ease;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 1rem;
         }
 
         .btn:hover {
+            background: var(--accent-medium);
             transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(136, 180, 194, 0.3);
         }
 
         /* Sections */
@@ -118,108 +138,161 @@
 
         .section-title {
             text-align: center;
-            margin-bottom: 3rem;
-            color: var(--dark);
+            margin-bottom: 4rem;
+            color: var(--text-primary);
         }
 
         .section-title h2 {
-            font-size: 2.5rem;
+            font-size: 2.3rem;
             margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .section-title p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
         }
 
         /* About Section */
         .about-content {
             display: grid;
             grid-template-columns: 1fr 2fr;
-            gap: 3rem;
+            gap: 4rem;
             align-items: center;
         }
 
-        .profile-img {
+        .profile-emoji {
             width: 100%;
-            height: 350px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            object-fit: cover;
-        }
-
-        .profile-placeholder {
-            width: 100%;
-            height: 350px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            height: 400px;
+            background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent-medium) 100%);
+            border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 4rem;
+            font-size: 8rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-emoji:hover {
+            transform: scale(1.02);
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            font-weight: 400;
+        }
+
+        .about-text p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+            font-size: 1.05rem;
         }
 
         .skills {
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem;
+            gap: 0.8rem;
             margin-top: 2rem;
         }
 
         .skill-tag {
-            background: var(--primary);
-            color: white;
+            background: var(--accent-light);
+            color: var(--accent-dark);
             padding: 8px 16px;
             border-radius: 20px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: var(--accent-medium);
+            color: white;
+            transform: translateY(-1px);
         }
 
         /* Projects Section */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         .project-card {
-            background: white;
-            border-radius: 15px;
+            background: var(--bg-secondary);
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border);
         }
 
         .project-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
         }
 
         .project-image {
             width: 100%;
             height: 200px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent-medium) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
+            color: var(--text-primary);
+            font-size: 3.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover .project-image {
+            background: linear-gradient(135deg, var(--accent-medium) 0%, var(--accent-dark) 100%);
             color: white;
-            font-size: 3rem;
         }
 
         .project-content {
-            padding: 1.5rem;
+            padding: 2rem;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
         }
 
         .project-links {
             display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
+            gap: 1.2rem;
+            margin-top: 1.5rem;
         }
 
         .project-link {
-            color: var(--primary);
+            color: var(--accent-dark);
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            border: 1px solid var(--accent-dark);
+            border-radius: 6px;
         }
 
-        .project-link.disabled {
-            color: #7f8c8d;
-            cursor: not-allowed;
+        .project-link:hover {
+            background: var(--accent-dark);
+            color: white;
         }
 
         /* Timeline Section */
@@ -229,30 +302,82 @@
             margin: 0 auto;
         }
 
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--accent-light);
+        }
+
         .timeline-item {
-            background: white;
-            padding: 2rem;
-            margin: 2rem 0;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            background: var(--bg-secondary);
+            padding: 2.5rem;
+            margin: 2.5rem 0;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
             position: relative;
+            border: 1px solid var(--border);
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(10px);
         }
 
         .timeline-item::before {
             content: '';
             position: absolute;
-            left: -20px;
-            top: 2rem;
+            left: -40px;
+            top: 3rem;
             width: 20px;
             height: 20px;
-            background: var(--primary);
+            background: var(--accent-dark);
             border-radius: 50%;
+            border: 4px solid var(--bg-primary);
         }
 
         .timeline-date {
-            color: var(--primary);
-            font-weight: bold;
-            margin-bottom: 0.5rem;
+            color: var(--accent-dark);
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
+        }
+
+        .timeline-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .timeline-item p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Skills Section */
+        .skills-section {
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category h4 {
+            color: var(--accent-dark);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            font-size: 1.1rem;
         }
 
         /* Contact Section */
@@ -262,29 +387,48 @@
             margin: 0 auto;
         }
 
+        .contact-text {
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
         .contact-links {
             display: flex;
             justify-content: center;
             gap: 2rem;
-            margin-top: 2rem;
+            margin-top: 2.5rem;
         }
 
         .contact-link {
-            color: var(--primary);
-            font-size: 1.5rem;
-            transition: transform 0.3s ease;
+            color: var(--accent-dark);
+            font-size: 1.8rem;
+            transition: all 0.3s ease;
+            padding: 1rem;
+            border-radius: 12px;
+            background: var(--bg-secondary);
+            box-shadow: var(--shadow);
         }
 
         .contact-link:hover {
-            transform: scale(1.2);
+            color: white;
+            background: var(--accent-dark);
+            transform: translateY(-3px);
         }
 
         /* Footer */
         footer {
-            background: var(--dark);
-            color: white;
+            background: var(--bg-secondary);
+            padding: 3rem 2rem;
             text-align: center;
-            padding: 2rem;
+            margin-top: 4rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-content p {
+            color: var(--text-secondary);
+            font-size: 1rem;
         }
 
         /* Responsive Design */
@@ -294,12 +438,24 @@
             }
 
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
             }
 
             .about-content {
                 grid-template-columns: 1fr;
                 text-align: center;
+                gap: 2.5rem;
+            }
+
+            .profile-emoji {
+                height: 300px;
+                font-size: 6rem;
+                max-width: 300px;
+                margin: 0 auto;
             }
 
             .projects-grid {
@@ -309,16 +465,41 @@
             .contact-links {
                 flex-direction: column;
                 gap: 1rem;
+                align-items: center;
             }
 
-            .profile-img, .profile-placeholder {
-                height: 280px;
-                max-width: 280px;
-                margin: 0 auto;
+            .contact-link {
+                width: 60px;
+                height: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .timeline::before {
+                left: 20px;
             }
 
             .timeline-item::before {
-                left: -15px;
+                left: -30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .hero {
+                padding: 120px 1rem 60px;
+            }
+
+            .section {
+                padding: 60px 1rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -327,10 +508,10 @@
     <!-- Navigation -->
     <header>
         <nav class="nav-container">
-            <div class="logo">Cindy Roman Torres</div>
+            <div class="logo">Cindy <span>Roman Torres</span></div>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
-                <li><a href="#journey">My Journey</a></li>
+                <li><a href="#journey">Journey</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -341,9 +522,9 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Front-End Developer & Operations Professional</h1>
-            <p>Transitioning from hospitality management to creating beautiful, functional web applications. Based in London, UK.</p>
-            <a href="#projects" class="btn">View My Work</a>
+            <h1>Front-End Developer & Creative Problem Solver</h1>
+            <p>Crafting beautiful, functional web experiences with a focus on user-centered design and accessibility</p>
+            <a href="#projects" class="btn">Explore My Work</a>
         </div>
     </section>
 
@@ -351,63 +532,59 @@
     <section id="about" class="section">
         <div class="section-title">
             <h2>About Me</h2>
-            <p>My journey from operations to code</p>
+            <p>My journey from operations to creative development</p>
         </div>
         <div class="about-content">
             <div>
-                <!-- FOTO TEMPORAL - Reemplaza esta línea con tu foto cuando la tengas -->
-                <div class="profile-placeholder">
+                <div class="profile-emoji">
                     👩‍💻
                 </div>
-                <!-- PARA TU FOTO REAL: Reemplaza la línea de arriba con esto:
-                <img src="https://TU-ENLACE-DE-IMGBB-AQUI/profile.jpg" alt="Cindy Roman Torres" class="profile-img">
-                -->
             </div>
-            <div>
+            <div class="about-text">
                 <h3>Hello! I'm Cindy</h3>
-                <p>A passionate front-end developer in training with extensive experience in operations and hospitality management. I'm currently building my skills through intensive coding education to transition into a remote-friendly tech career.</p>
-                <p>My background in managing teams and operations at premium establishments like Hotel Café Royal has equipped me with exceptional problem-solving abilities, attention to detail, and a strong focus on user experience - skills that translate perfectly to web development.</p>
+                <p>A passionate front-end developer transitioning from operations management to web development. I bring a unique perspective from years of managing teams in high-pressure hospitality environments, now applied to creating intuitive digital experiences.</p>
+                <p>My background has equipped me with exceptional problem-solving skills, attention to detail, and a deep understanding of user experience - qualities that translate seamlessly into building accessible, user-friendly web applications.</p>
                 
                 <div class="skills">
-                    <span class="skill-tag">HTML5</span>
-                    <span class="skill-tag">CSS3</span>
-                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">HTML5 & CSS3</span>
+                    <span class="skill-tag">JavaScript ES6+</span>
                     <span class="skill-tag">Responsive Design</span>
                     <span class="skill-tag">Git & GitHub</span>
                     <span class="skill-tag">React.js</span>
-                    <span class="skill-tag">Chart.js</span>
-                    <span class="skill-tag">REST APIs</span>
+                    <span class="skill-tag">UI/UX Principles</span>
+                    <span class="skill-tag">Web Accessibility</span>
+                    <span class="skill-tag">Performance Optimization</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Journey Timeline -->
-    <section id="journey" class="section" style="background: #f8f9fa;">
+    <section id="journey" class="section">
         <div class="section-title">
             <h2>My Career Journey</h2>
-            <p>From hospitality to tech</p>
+            <p>From hospitality excellence to digital creation</p>
         </div>
         <div class="timeline">
             <div class="timeline-item">
                 <div class="timeline-date">2022 - Present</div>
-                <h3>Career Transition & Skills Development</h3>
-                <p>Dedicated period to parenting while actively upskilling in front-end development through SheCodes and self-directed learning. Building real projects and preparing for a tech career.</p>
+                <h3>Career Transition & Skill Development</h3>
+                <p>Dedicated period to intensive front-end development training through SheCodes and self-directed learning. Building real-world projects and establishing a strong foundation in modern web technologies.</p>
             </div>
             <div class="timeline-item">
                 <div class="timeline-date">2021 - 2022</div>
                 <h3>Operations Manager | Zapp, London</h3>
-                <p>Managed daily operations and team leadership in fast-paced delivery service environment. Promoted from Supervisor to Operations Manager within 6 months.</p>
+                <p>Led daily operations and team management in a fast-paced delivery environment. Promoted from Supervisor to Operations Manager within 6 months, demonstrating strong leadership and process optimization skills.</p>
             </div>
             <div class="timeline-item">
                 <div class="timeline-date">2016 - 2020</div>
                 <h3>Supervisor & Waitress | Hotel Café Royal, London</h3>
-                <p>Led teams in high-end hospitality, ensuring premium guest experiences and operational excellence in luxury hotel environment.</p>
+                <p>Managed teams in luxury hospitality, ensuring exceptional guest experiences and operational excellence. Developed strong client relationship and problem-solving skills in high-end service environment.</p>
             </div>
             <div class="timeline-item">
                 <div class="timeline-date">2009 - 2014</div>
                 <h3>Assistant Manager | Cafe Lounge Bar Mozart, Spain</h3>
-                <p>Early career development in hospitality management, building foundation in customer service and business operations.</p>
+                <p>Built foundation in business operations and customer service management. Learned the importance of attention to detail and creating memorable user experiences.</p>
             </div>
         </div>
     </section>
@@ -415,8 +592,8 @@
     <!-- Projects Section -->
     <section id="projects" class="section">
         <div class="section-title">
-            <h2>My Projects</h2>
-            <p>Practical applications of my coding skills</p>
+            <h2>Featured Projects</h2>
+            <p>Practical applications of my development skills</p>
         </div>
         <div class="projects-grid">
             <!-- Project 1 - Expense Tracker -->
@@ -426,7 +603,7 @@
                 </div>
                 <div class="project-content">
                     <h3>Expense Tracker</h3>
-                    <p>A comprehensive financial management application with interactive charts and analytics for tracking income and expenses.</p>
+                    <p>A comprehensive financial management application featuring interactive charts, category tracking, and local storage persistence. Built with vanilla JavaScript and Chart.js for data visualization.</p>
                     <div class="project-links">
                         <a href="https://cindynathalyrt-bot.github.io/expense-tracker/" class="project-link">Live Demo</a>
                         <a href="https://github.com/cindynathalyrt-bot/expense-tracker" class="project-link">GitHub</a>
@@ -441,7 +618,7 @@
                 </div>
                 <div class="project-content">
                     <h3>Color Palette Generator</h3>
-                    <p>An interactive tool for designers to generate harmonious color palettes with lock functionality and copy-to-clipboard features.</p>
+                    <p>An interactive tool for designers featuring color locking, copy-to-clipboard functionality, and harmonious palette generation. Demonstrates advanced DOM manipulation and user interaction patterns.</p>
                     <div class="project-links">
                         <a href="https://cindynathalyrt-bot.github.io/color-palette-generator/" class="project-link">Live Demo</a>
                         <a href="https://github.com/cindynathalyrt-bot/color-palette-generator" class="project-link">GitHub</a>
@@ -449,17 +626,17 @@
                 </div>
             </div>
 
-            <!-- Project 3 - Coming Soon -->
+            <!-- Project 3 - E-commerce Store -->
             <div class="project-card">
                 <div class="project-image">
                     🛒
                 </div>
                 <div class="project-content">
-                    <h3>E-commerce Store</h3>
-                    <p>A responsive online store with shopping cart functionality and product filtering. (Coming Soon)</p>
+                    <h3>Mama & Baby Essentials</h3>
+                    <p>UK-focused e-commerce platform for baby products. Features shopping cart functionality, category filtering, and a calm, accessible design optimized for tired parents.</p>
                     <div class="project-links">
-                        <span class="project-link disabled">Live Demo (Soon)</span>
-                        <span class="project-link disabled">GitHub (Soon)</span>
+                        <a href="https://cindynathalyrt-bot.github.io/ecommerce-store/" class="project-link">Live Demo</a>
+                        <a href="https://github.com/cindynathalyrt-bot/ecommerce-store" class="project-link">GitHub</a>
                     </div>
                 </div>
             </div>
@@ -470,33 +647,52 @@
     <section id="skills" class="section">
         <div class="section-title">
             <h2>Skills & Technologies</h2>
-            <p>What I'm learning and working with</p>
+            <p>Tools and technologies I work with</p>
         </div>
-        <div class="skills" style="justify-content: center;">
-            <span class="skill-tag">HTML5 & CSS3</span>
-            <span class="skill-tag">JavaScript (ES6+)</span>
-            <span class="skill-tag">Responsive Web Design</span>
-            <span class="skill-tag">Git & GitHub</span>
-            <span class="skill-tag">Chart.js</span>
-            <span class="skill-tag">REST APIs</span>
-            <span class="skill-tag">React.js</span>
-            <span class="skill-tag">Bootstrap</span>
-            <span class="skill-tag">VS Code</span>
-            <span class="skill-tag">Google Workspace</span>
-            <span class="skill-tag">Procreate</span>
-            <span class="skill-tag">Midjourney</span>
+        <div class="skills-section">
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Frontend Development</h4>
+                    <div class="skills">
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React.js</span>
+                        <span class="skill-tag">Responsive Design</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Tools & Platforms</h4>
+                    <div class="skills">
+                        <span class="skill-tag">Git & GitHub</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">Chrome DevTools</span>
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">Netlify</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h4>Design & Creative</h4>
+                    <div class="skills">
+                        <span class="skill-tag">UI/UX Design</span>
+                        <span class="skill-tag">Adobe Creative Suite</span>
+                        <span class="skill-tag">Procreate</span>
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">Web Accessibility</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="section">
         <div class="section-title">
-            <h2>Get In Touch</h2>
-            <p>Let's connect and build something amazing together</p>
+            <h2>Let's Connect</h2>
+            <p>Get in touch to discuss opportunities or collaborations</p>
         </div>
         <div class="contact-content">
-            <p>I'm currently looking for junior front-end developer opportunities, especially remote or hybrid positions in the UK.</p>
-            <p>Whether you have a project in mind, want to collaborate, or just want to say hello - I'd love to hear from you!</p>
+            <p class="contact-text">I'm currently exploring junior front-end developer roles, particularly remote or hybrid positions in the UK. I'm passionate about creating accessible, user-friendly web experiences and would love to contribute to meaningful projects.</p>
             
             <div class="contact-links">
                 <a href="mailto:cindyrtorres@icloud.com" class="contact-link" title="Email">
@@ -508,17 +704,16 @@
                 <a href="https://github.com/cindynathalyrt-bot" class="contact-link" title="GitHub">
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="tel:+447920496435" class="contact-link" title="Phone">
-                    <i class="fas fa-phone"></i>
-                </a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Cindy Roman Torres. Built with ❤️ and lots of ☕</p>
-        <p style="margin-top: 0.5rem; opacity: 0.8;">London, UK</p>
+        <div class="footer-content">
+            <p>&copy; 2024 Cindy Roman Torres. Crafted with care and attention to detail.</p>
+            <p style="margin-top: 0.5rem; color: var(--text-light);">London, United Kingdom</p>
+        </div>
     </footer>
 
     <script>
@@ -527,21 +722,49 @@
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
+                    behavior: 'smooth',
+                    block: 'start'
                 });
             });
         });
 
-        // Add scroll effect to header
+        // Add subtle scroll effect to header
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'var(--dark)';
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
             } else {
-                header.style.background = 'linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%)';
+                header.style.background = 'var(--bg-secondary)';
+                header.style.backdropFilter = 'blur(0px)';
             }
+        });
+
+        // Add intersection observer for subtle animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const elementsToAnimate = document.querySelectorAll('.project-card, .timeline-item, .skill-category');
+            elementsToAnimate.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
         });
     </script>
 </body>
 </html>
-
