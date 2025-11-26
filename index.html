@@ -204,6 +204,11 @@
             font-weight: bold;
         }
 
+        .project-link.disabled {
+            color: #7f8c8d;
+            cursor: not-allowed;
+        }
+
         /* Timeline Section */
         .timeline {
             position: relative;
@@ -298,6 +303,10 @@
                 max-width: 280px;
                 margin: 0 auto;
             }
+
+            .timeline-item::before {
+                left: -15px;
+            }
         }
     </style>
 </head>
@@ -391,7 +400,7 @@
             <p>Practical applications of my coding skills</p>
         </div>
         <div class="projects-grid">
-            <!-- Project 1 -->
+            <!-- Project 1 - Expense Tracker -->
             <div class="project-card">
                 <div class="project-image">
                     💰
@@ -406,7 +415,7 @@
                 </div>
             </div>
 
-            <!-- Project 2 -->
+            <!-- Project 2 - Color Generator -->
             <div class="project-card">
                 <div class="project-image">
                     🎨
@@ -421,17 +430,17 @@
                 </div>
             </div>
 
-            <!-- Project 3 (Portfolio) -->
+            <!-- Project 3 - Coming Soon -->
             <div class="project-card">
                 <div class="project-image">
-                    🌐
+                    🛒
                 </div>
                 <div class="project-content">
-                    <h3>Personal Portfolio</h3>
-                    <p>This responsive portfolio website showcasing my projects and career journey. Built with vanilla JavaScript and modern CSS.</p>
+                    <h3>E-commerce Store</h3>
+                    <p>A responsive online store with shopping cart functionality and product filtering. (Coming Soon)</p>
                     <div class="project-links">
-                        <a href="https://cindynathalyrt-bot.github.io/portfolio/" class="project-link">Live Demo</a>
-                        <a href="https://github.com/cindynathalyrt-bot/portfolio" class="project-link">GitHub</a>
+                        <span class="project-link disabled">Live Demo (Soon)</span>
+                        <span class="project-link disabled">GitHub (Soon)</span>
                     </div>
                 </div>
             </div>
