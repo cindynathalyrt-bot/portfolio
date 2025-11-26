@@ -143,6 +143,19 @@
             object-fit: cover;
         }
 
+        .profile-placeholder {
+            width: 100%;
+            height: 350px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+
         .skills {
             display: flex;
             flex-wrap: wrap;
@@ -298,7 +311,7 @@
                 gap: 1rem;
             }
 
-            .profile-img {
+            .profile-img, .profile-placeholder {
                 height: 280px;
                 max-width: 280px;
                 margin: 0 auto;
@@ -342,7 +355,13 @@
         </div>
         <div class="about-content">
             <div>
-                <img src="https://media.licdn.com/dms/image/D4E03AQF9X8J6Jd1m_w/profile-displayphoto-shrink_800_800/0/1705592788815?e=1717027200&v=beta&t=YhFh9u2y9QYk7LpNvQ4zD5tF9YqWp1_6Q7Q7Q7Q7Q7Q" alt="Cindy Roman Torres" class="profile-img">
+                <!-- FOTO TEMPORAL - Reemplaza esta línea con tu foto cuando la tengas -->
+                <div class="profile-placeholder">
+                    👩‍💻
+                </div>
+                <!-- PARA TU FOTO REAL: Reemplaza la línea de arriba con esto:
+                <img src="https://TU-ENLACE-DE-IMGBB-AQUI/profile.jpg" alt="Cindy Roman Torres" class="profile-img">
+                -->
             </div>
             <div>
                 <h3>Hello! I'm Cindy</h3>
