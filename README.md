@@ -77,45 +77,7 @@ cd portfolio
 
 3. **Open index.html in your browser**
 
-Simply double-click the file, or
+Simply double-click the file
+
 
 Use a local server for better performance
-
-🌟 Featured Projects
-💰 Expense Tracker
-A comprehensive financial management application with interactive charts and analytics for tracking income and expenses.
-
-🎨 Color Palette Generator
-An interactive tool for designers to generate harmonious color palettes with lock functionality and copy-to-clipboard features.
-
-🛒 E-commerce Store - Coming Soon
-A responsive online store with shopping cart functionality and product filtering.
-
-🎓 My Learning Path
-SheCodes Front-End Development - Current
-
-Self-Directed Learning - HTML, CSS, JavaScript, React
-
-Practical Project Building - Real-world applications
-
-💡 Why I'm Transitioning to Tech
-After years in operations and hospitality management, I'm pursuing a career in front-end development to:
-
-Leverage my problem-solving skills in a creative field
-
-Work in a growing industry with remote opportunities
-
-Build products that make a difference in people's lives
-
-Continuously learn and adapt to new technologies
-
-📄 License
-This project is open source and available under the MIT License.
-
-<div align="center">
-🚀 Always learning, always building
-"The beautiful thing about learning is that no one can take it away from you." - B.B. King
-
-</div> ```
-## 📁 Project Structure
-
